@@ -16,6 +16,14 @@
     --warm-color: #d36b38;
     --code-background-color: #e8ebe5;
     --code-color: #17201d;
+    --syntax-comment: #5f6d66;
+    --syntax-keyword: #735a78;
+    --syntax-string: #397057;
+    --syntax-number: #746832;
+    --syntax-name: #496e78;
+    --syntax-type: #855d48;
+    --syntax-operator: #59645f;
+    --syntax-error: #9b4747;
     --blockquote-color: #52605b;
 }
 
@@ -32,6 +40,14 @@
         --warm-color: #f08a58;
         --code-background-color: #183633;
         --code-color: #ecf1ec;
+        --syntax-comment: #8fa49d;
+        --syntax-keyword: #d0b8d4;
+        --syntax-string: #a8c99f;
+        --syntax-number: #c8bd8d;
+        --syntax-name: #94b8c2;
+        --syntax-type: #d3b28f;
+        --syntax-operator: #b3c1bc;
+        --syntax-error: #dda09b;
         --blockquote-color: #b4c3bd;
     }
 }
@@ -249,13 +265,14 @@ body > footer {
     color: var(--code-color);
     box-shadow: 3px 3px 0 var(--line-color);
     line-height: 1.65;
-    white-space: pre-wrap;
-    overflow-wrap: anywhere;
+    overflow-x: auto;
 }
 
 .highlight pre,
 .code pre {
     margin: 0;
+    white-space: pre;
+    tab-size: 4;
 }
 
 .highlight code,
@@ -265,25 +282,99 @@ body > footer {
     color: inherit;
 }
 
-.highlight .c { color: var(--muted-color); }
-.highlight .k,
-.highlight .nb { color: #76528c; }
-.highlight .s,
-.highlight .s1,
-.highlight .s2 { color: #087f5b; }
-.highlight .nv,
-.highlight .gp { color: var(--link-color); }
-.highlight .gp { font-weight: bold; }
-.highlight .o { color: #ad5a31; }
+.highlight [class] { color: inherit; }
 
-@media (prefers-color-scheme: dark) {
-    .highlight .k,
-    .highlight .nb { color: #d0b9dc; }
-    .highlight .s,
-    .highlight .s1,
-    .highlight .s2 { color: #86d6a0; }
-    .highlight .o { color: #f0b277; }
+.highlight .c,
+.highlight .ch,
+.highlight .cm,
+.highlight .cp,
+.highlight .cpf,
+.highlight .c1,
+.highlight .cs {
+    color: var(--syntax-comment);
+    font-style: italic;
 }
+
+.highlight .k,
+.highlight .kc,
+.highlight .kd,
+.highlight .kn,
+.highlight .kp,
+.highlight .kr,
+.highlight .nb,
+.highlight .bp {
+    color: var(--syntax-keyword);
+    font-weight: 600;
+}
+
+.highlight .s,
+.highlight .sa,
+.highlight .sb,
+.highlight .sc,
+.highlight .dl,
+.highlight .sd,
+.highlight .s1,
+.highlight .s2,
+.highlight .se,
+.highlight .sh,
+.highlight .si,
+.highlight .sx,
+.highlight .sr,
+.highlight .ss {
+    color: var(--syntax-string);
+}
+
+.highlight .m,
+.highlight .mb,
+.highlight .mf,
+.highlight .mh,
+.highlight .mi,
+.highlight .mo,
+.highlight .il,
+.highlight .no {
+    color: var(--syntax-number);
+}
+
+.highlight .nf,
+.highlight .fm,
+.highlight .na,
+.highlight .nt,
+.highlight .nd,
+.highlight .nl,
+.highlight .nn {
+    color: var(--syntax-name);
+}
+
+.highlight .nc,
+.highlight .ne,
+.highlight .kt {
+    color: var(--syntax-type);
+    font-weight: 600;
+}
+
+.highlight .nv,
+.highlight .vc,
+.highlight .vg,
+.highlight .vi,
+.highlight .vm,
+.highlight .gp {
+    color: var(--syntax-name);
+}
+
+.highlight .o,
+.highlight .ow,
+.highlight .p {
+    color: var(--syntax-operator);
+}
+
+.highlight .err,
+.highlight .gr,
+.highlight .gt {
+    color: var(--syntax-error);
+    border: 0;
+}
+
+.highlight .gp { font-weight: bold; }
 
 /* Homepage-only Signal Log layout */
 
