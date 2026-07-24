@@ -382,6 +382,10 @@ body.home {
     letter-spacing: 0;
 }
 
+.signal-main section > p:empty {
+    margin: 0;
+}
+
 .signal-entry {
     position: relative;
     padding: 0 0 34px 24px;
